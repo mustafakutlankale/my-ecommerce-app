@@ -1,5 +1,3 @@
-import { UserSchema } from "./User";
-
 export const ItemSchema = {
     name: String,
     description: String,
