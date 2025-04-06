@@ -8,7 +8,10 @@ import { useSession } from 'next-auth/react';
 
 export default function AddUser() {
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const sessionResult = useSession();
+  const session = sessionResult?.data;
+  const status = sessionResult?.status ?? 'loading';
+
   
   const [formData, setFormData] = useState({
     username: '',
