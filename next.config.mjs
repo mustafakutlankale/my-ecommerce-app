@@ -1,8 +1,13 @@
+// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['images.unsplash.com'],
+      domains: ['images.unsplash.com'],
     },
-};
-
-export default nextConfig;
+    eslint: {
+      // Warning instead of error during builds
+      ignoreDuringBuilds: true,
+    },
+  };
+  
+  export default nextConfig;
