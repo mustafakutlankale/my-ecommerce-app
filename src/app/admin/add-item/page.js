@@ -7,18 +7,23 @@ import { useSession } from 'next-auth/react';
 
 export default function AddItem() {
   const router = useRouter();
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      router.push('/signin');
-    }
-  });
-  
-  // Check if user is admin
+  const { data: session, status } = useSession();
+
+  if (status === 'loading') {
+    return <div className="p-4">Loading...</div>;
+  }
+
+  if (status === 'unauthenticated') {
+    router.push('/signin');
+    return null;
+  }
+
+  // Check if user is not admin
   if (session?.user?.role !== 'admin') {
     router.push('/');
     return null;
   }
+
   
   const [formData, setFormData] = useState({
     name: '',
