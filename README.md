@@ -53,7 +53,7 @@ I implemented authentication using NextAuth.js with a credentials provider. This
 
 ## Vercel Deployment URL
 
-[https://my-ecommerce-c8fz3wk2a-kutlans-projects.vercel.app](https://my-ecommerce-c8fz3wk2a-kutlans-projects.vercel.app)
+[https://my-ecommerce-app-blue.vercel.app](https://my-ecommerce-app-blue.vercel.app)
 
 ## Populating the Database
 
