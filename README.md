@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CENG495 CLOUD COMPUTING E-Commerce Application
 
-## Getting Started
+This e-commerce application was developed for the CENG 495 Cloud Computing course at Middle East Technical University. It's built using Next.js, MongoDB Atlas, and deployed on Vercel.
 
-First, run the development server:
+## Design Decisions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Technology Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Frontend**: Next.js with App Router
+- **Backend**: Next.js API Routes
+- **Database**: MongoDB Atlas (NoSQL)
+- **Authentication**: NextAuth.js
+- **Styling**: Tailwind CSS
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+I chose Next.js for this project because it offers a great balance between frontend and backend capabilities, with built-in API routes that make it easy to create a full-stack application without needing a separate backend server. The App Router provides a modern, efficient way to handle routing in the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Database Schema
 
-## Learn More
+I designed the database with two main collections to keep it minimal while maintaining the necessary relationships:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Users Collection**: Stores user data, including their ratings and reviews.
+2. **Items Collection**: Stores item data, including attributes specific to each category.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This design allows for efficient querying and reduces the need for complex joins or lookups. It also makes it easy to display and update user's ratings and reviews.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Authentication
 
-## Deploy on Vercel
+I implemented authentication using NextAuth.js with a credentials provider. This allows users to sign in with a username and password. The application supports two roles:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Admin**: Can add and remove items and users
+2. **Regular User**: Can browse items, rate them, and write reviews
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How to Use
+
+### Login Credentials
+
+- **Admin User**:
+  - Username: admin
+  - Password: admin123
+
+- **Regular User**:
+  - Username: user1
+  - Password: user123
+
+### Features
+
+- **Home Page**: Browse all items or filter by category
+- **Item Detail**: View detailed information about an item
+- **Rating & Reviews**: Authenticated users can rate items and write reviews
+- **Admin Dashboard**: Admin users can manage items and users
+- **User Profile**: View your ratings and reviews
+
+
+## Vercel Deployment URL
+
+[https://my-ecommerce-c8fz3wk2a-kutlans-projects.vercel.app](https://my-ecommerce-c8fz3wk2a-kutlans-projects.vercel.app)
+
+## Populating the Database
+
+Before submitting, I've populated the database with:
+- 8 items
+- 3 users (including an admin)
+- Multiple ratings and reviews
