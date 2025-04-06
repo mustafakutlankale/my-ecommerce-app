@@ -81,7 +81,7 @@ export default function UserProfile() {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic">You haven't written any reviews yet</p>
+          <p className="text-gray-400 italic">You haven&apos;t written any reviews yet</p>
         )}
       </div>
     </div>
